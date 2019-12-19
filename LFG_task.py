@@ -68,10 +68,10 @@ def notificationMsg_reg(lfg):
         )
 def notificationMsg_noti(lfg):
     return "".join(
-        ["[",str(lfg.code),"] 화력팀 예약\n","화력팀 내용 : ","\n시작시간 : ",
-        lfg.startTime.strftime('%Y-%m-%d %H:%M'),lfg.content,
+        ["[",str(lfg.code),"] 화력팀 예약","\n/합류 ",lfg.joinCode,"\n시작시간 : ",
+        lfg.startTime.strftime('%Y-%m-%d %H:%M'),
         "\n화력팀 목록 : "]
-        )+" ".join(lfg.guardians)+"\n/합류 "+lfg.joinCode
+        )+"|".join(lfg.guardians)+"\n화력팀 내용 : "+lfg.content
 
 
 def find_channel(client,notiId):
